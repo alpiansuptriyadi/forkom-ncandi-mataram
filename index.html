@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ===== SEO DASAR ===== -->
+  <title>FORKOM NCANDI MATARAM | Organisasi Mahasiswa Ncandi</title>
+  <meta name="description"
+        content="Website resmi FORKOM NCANDI MATARAM. Organisasi kepemudaan yang berdiri sejak 04 Juni 2016 di Mataram, bergerak dalam pengorganisasian, pengembangan intelektual, dan pengabdian sosial.">
+  <meta name="keywords"
+        content="FORKOM Ncandi, Forkom Ncandi Mataram, organisasi mahasiswa Ncandi, organisasi mahasiswa NTB, komunitas pemuda Mataram">
+  <meta name="author" content="FORKOM NCANDI MATARAM">
+  <meta name="robots" content="index, follow">
+
+  <!-- ===== RESPONSIVE ===== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ===== ICON ===== -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ===== EMAILJS LIBRARY ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("PUBLIC_KEY_LU");
+    })();
+  </script>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>FORUM KOMUNIKASI MAHASISWA NCANDI MATARAM</h1>
+  <p>Solid, Kritis, dan Bertanggung Jawab</p>
+</header>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="img/logoforkom.png" alt="Logo Organisasi">
+    <span>FORKOM NCANDI MATARAM</span>
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="#" onclick="showSection('profil', this)">Profil</a>
+    <a href="#" onclick="showSection('visi', this)">Visi & Misi</a>
+    <a href="#" onclick="showSection('kegiatan', this)">Kegiatan</a>
+    <a href="#" onclick="showSection('kontak', this)">Kontak</a>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- ===== PROFIL ===== -->
+<section id="profil" class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <h1>FORKOM NCANDI MATARAM</h1>
+    <p class="subtitle">Didirikan 04 Juni 2016 di Mataram</p>
+
+    <p class="desc">
+      Menghimpun dan mengorganisir anggota secara terarah untuk meningkatkan
+      kapasitas intelektual, keterampilan, dan integritas dalam menghadapi
+      persoalan nyata di lingkungan sekitar.
+    </p>
+
+    <div class="social-links">
+      <a href="mailto:forkomncandimataram@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+      <a href="https://www.facebook.com/ForkomNcandi" target="_blank">
+        <i class="fa-brands fa-facebook"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/forkomncandi_mataram" target="_blank">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+    </div>
+    <p>Berkarya Tampa Batas!!</p>
+  </div>
+</section>
+
+<!-- ===== VISI MISI ===== -->
+<section id="visi" class="content">
+  <h2>Visi dan Misi</h2>
+
+  <h3>Visi</h3>
+  <p>
+    Menjadi organisasi yang konsisten menghasilkan sumber daya manusia
+    yang berintegritas, kritis, dan berdaya guna melalui kerja nyata
+    dan pengabdian bagi masyarakat.
+  </p>
+
+  <h3>Misi</h3>
+  <ul>
+    <li>Mengembangkan kapasitas anggota.</li>
+    <li>Membangun budaya organisasi disiplin.</li>
+    <li>Mendorong keterlibatan sosial.</li>
+    <li>Menjadi ruang kaderisasi kritis.</li>
+    <li>Menjalin kerja sama strategis.</li>
+  </ul>
+</section>
+
+<!-- ===== KEGIATAN ===== -->
+<section id="kegiatan" class="content">
+  <h2>Galeri Juang Forkom</h2>
+
+  <div class="kegiatan-grid">
+    <div class="kegiatan-card" onclick="bukaGallery('pekaderan')">
+      <img src="img/pekaderan1.jpeg">
+      <h3>Pelatihan Kepemimpinan</h3>
+    </div>
+
+    <div class="kegiatan-card" onclick="bukaGallery('aksi')">
+      <img src="img/aksi1.jpg">
+      <h3>Aksi Kemanusiaan</h3>
+    </div>
+
+    <div class="kegiatan-card" onclick="bukaGallery('baksos')">
+      <img src="img/baktisosial1.jpg">
+      <h3>Bakti Sosial</h3>
+    </div>
+
+    <div class="kegiatan-card" onclick="bukaGallery('kajian')">
+      <img src="img/kajian1.jpg">
+      <h3>Diskusi & Kajian</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY MODAL ===== -->
+<div id="galleryModal" class="gallery">
+  <span class="close" onclick="tutupGallery()">&times;</span>
+  <div id="galleryContent" class="gallery-content"></div>
+</div>
+
+<!-- ===== KONTAK ===== -->
+<section id="kontak" class="content">
+  <h2>Hubungi Kami</h2>
+
+  <form id="formKontak">
+    <input type="text" name="nama" placeholder="Nama" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="pesan" rows="4" placeholder="Pesan / Undangan" required></textarea>
+    <button type="submit">Kirim Pesan</button>
+  </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>&copy; 2025 Forkom Ncandi Mataram</p>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+<script>
+function showSection(id, el) {
+  document.querySelectorAll("section").forEach(s => s.style.display = "none");
+  document.getElementById(id).style.display = "block";
+
+  document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
+  el.classList.add("active");
+}
+window.onload = () => document.querySelector(".menu a").click();
+</script>
+
+<script>
+document.getElementById("formKontak").addEventListener("submit", function(e) {
+  e.preventDefault();
+  emailjs.sendForm("SERVICE_ID_LU", "TEMPLATE_ID_LU", this)
+    .then(() => alert("Pesan terkirim"))
+    .catch(() => alert("Gagal mengirim"));
+});
+</script>
+
+<script>
+const dataGallery = {
+  pekaderan: ["img/pekaderan4.jpeg","img/pekaderan2.jpg","img/pekaderan3.jpeg"],
+  aksi: ["img/aksi2.jpg","img/aksi3.jpg","img/aksi4.jpg"],
+  baksos: ["img/baktisosial2.jpg","img/baktisosial5.jpg"],
+  kajian: ["img/kajian2.jpg","img/kajian3.jpeg","img/kajian4.jpeg","img/kajian5.jpg"]
+};
+
+function bukaGallery(k) {
+  const c = document.getElementById("galleryContent");
+  c.innerHTML = "";
+  dataGallery[k].forEach(i => {
+    const img = document.createElement("img");
+    img.src = i;
+    c.appendChild(img);
+  });
+  document.getElementById("galleryModal").style.display = "block";
+}
+function tutupGallery() {
+  document.getElementById("galleryModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

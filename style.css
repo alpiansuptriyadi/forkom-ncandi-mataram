@@ -1,0 +1,330 @@
+/* =========================
+   GLOBAL
+========================= */
+:root {
+  --primary: #1e3a8a;
+  --secondary: #0a3d62;
+  --accent: #1e3799;
+  --bg: #f4f6f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: #222;
+}
+
+h2 {
+  color: var(--primary);
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background-color: #073352;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu a.active {
+  background: white;
+  color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 5px;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--accent);
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 14px 0;
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("img/pppp.jpeg") center/cover no-repeat;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.hero-content .desc {
+  max-width: 800px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+.social-links {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: white;
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+.content {
+  display: none;
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: fade 0.4s ease;
+}
+
+/* =========================
+   KEGIATAN
+========================= */
+.kegiatan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.kegiatan-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.kegiatan-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.kegiatan-card h3 {
+  margin: 15px;
+}
+
+.kegiatan-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+}
+
+.gallery-content {
+  max-width: 1000px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   FORM
+========================= */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--secondary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
